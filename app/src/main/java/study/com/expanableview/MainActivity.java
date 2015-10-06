@@ -2,6 +2,8 @@ package study.com.expanableview;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,10 +17,14 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import study.com.expanableview.Adapter.MyExpandableListAdapter;
+import study.com.expanableview.Adapter.MyExpandableRecyclerAdapter;
+import study.com.expanableview.Model.ChildObject;
+import study.com.expanableview.Model.ParentObject;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    //------------------ ExpandableListView --------------------
     //Header Group
     List<String> headersArrayList = new ArrayList<String>();
     //Child Group
@@ -30,8 +36,13 @@ public class MainActivity extends ActionBarActivity {
     //Custom ExpandableAdapter
     MyExpandableListAdapter adapter;
 
+    //------------------- ExpandableRecyclerView ---------------
+    List<ParentObject> erv_parentList = new ArrayList<ParentObject>();
+
+
     //Bind View with ButterKnife
     @Bind(R.id.elv) ExpandableListView elv;
+    @Bind(R.id.rv) RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +52,13 @@ public class MainActivity extends ActionBarActivity {
         //Bind View
         ButterKnife.bind(this);
 
+        //ExpandableListView
         setupData();
         setupExpandableListView();
+
+        //ExpandableRecyclerView
+        setupData_ExpandableRecyclerView();
+        setupExpandableRecyclerView();
     }
 
     private void setupData() {
@@ -105,6 +121,26 @@ public class MainActivity extends ActionBarActivity {
                 //Toast.makeText(getApplicationContext(), "Child is Expanded", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void setupData_ExpandableRecyclerView() {
+        erv_parentList.add(new ParentObject("Parent 1"));
+        erv_parentList.add(new ParentObject("Parent 2"));
+        erv_parentList.add(new ParentObject("Parent 3"));
+
+        for(ParentObject parent: erv_parentList)    {
+            parent.addChild(new ChildObject("child 1"));
+            parent.addChild(new ChildObject("child 2"));
+            parent.addChild(new ChildObject("child 3"));
+        }
+    }
+
+    private void setupExpandableRecyclerView() {
+        //create expandable adapter
+        MyExpandableRecyclerAdapter expandableAdapter = new MyExpandableRecyclerAdapter(this, erv_parentList);
+
+        rv.setAdapter(expandableAdapter);
+        rv.setLayoutManager(new LinearLayoutManager(this));
     }
 
 
