@@ -39,6 +39,12 @@ public class MainActivity extends ActionBarActivity {
     //------------------- ExpandableRecyclerView ---------------
     List<ParentObject> erv_parentList = new ArrayList<ParentObject>();
 
+    //------------------- RecyclerView child -------------------
+    List<ChildObject> childObjectList_1 = new ArrayList<ChildObject>();
+    List<ChildObject> childObjectList_2 = new ArrayList<ChildObject>();
+    List<ChildObject> childObjectList_3 = new ArrayList<ChildObject>();
+    HashMap<String, List<ChildObject>> childObjectArrayList = new HashMap<String, List<ChildObject>>();
+
 
     //Bind View with ButterKnife
     @Bind(R.id.elv) ExpandableListView elv;
@@ -84,9 +90,29 @@ public class MainActivity extends ActionBarActivity {
         childArrayList.put("Parent_3",childArrayList_3);
     }
 
+    private void testChildRecyclerView() {
+        //init data
+        for(int i=0; i<15; i++) {
+            childObjectList_1.add(new ChildObject("Child_" + i));
+            childObjectList_2.add(new ChildObject("Child_" + i));
+            childObjectList_3.add(new ChildObject("Child_" + i));
+        }
+        //associate the child list with header item.
+        childObjectArrayList.put("Parent_1",childObjectList_1);
+        childObjectArrayList.put("Parent_2",childObjectList_2);
+        childObjectArrayList.put("Parent_3",childObjectList_3);
+
+        // test for recyclerView child
+        adapter = new MyExpandableListAdapter(this, headersArrayList, childObjectArrayList, true);
+
+    }
+
     private void setupExpandableListView() {
         // declare adapter
         adapter = new MyExpandableListAdapter(this, headersArrayList, childArrayList);
+
+        //test code.. remove later
+        testChildRecyclerView();
 
         elv.setAdapter(adapter);
 
