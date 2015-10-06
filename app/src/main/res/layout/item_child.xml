@@ -11,7 +11,9 @@
         android:layout_height="match_parent"
         android:text="Child"
         android:gravity="center"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="#00FFFF"/>
 
 
 
