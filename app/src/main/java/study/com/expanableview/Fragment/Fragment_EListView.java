@@ -13,7 +13,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import study.com.expanableview.Adapter.MyExpandableListAdapter;
+import study.com.expanableview.Adapter.E_ListAdapter;
 import study.com.expanableview.MainActivity;
 import study.com.expanableview.Model.ParentObject;
 import study.com.expanableview.R;
@@ -24,7 +24,7 @@ public class Fragment_EListView extends Fragment {
     @Bind(R.id.elv) ExpandableListView elv;
 
     List<ParentObject> parentList;
-    MyExpandableListAdapter adapter;
+    E_ListAdapter adapter;
 
 
     public static Fragment_EListView newInstance() {
@@ -51,6 +51,8 @@ public class Fragment_EListView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_elistview, container, false);
+
+        //bind view with butterknife
         ButterKnife.bind(this, view);
 
         //setupData();
@@ -67,7 +69,7 @@ public class Fragment_EListView extends Fragment {
 
     private void setupExpandableListView() {
         // declare adapter
-        adapter = new MyExpandableListAdapter(getActivity(), parentList);
+        adapter = new E_ListAdapter(getActivity(), parentList);
         elv.setAdapter(adapter);
         elv.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override

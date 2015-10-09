@@ -19,11 +19,11 @@ import study.com.expanableview.ViewHolder.MyParentViewHolder;
 /**
  * Created by mooqoo on 10/6/15.
  */
-public class MyExpandableRecyclerAdapter extends ExpandableRecyclerAdapter<MyParentViewHolder, MyChildViewHolder> {
+public class E_RecyclerAdapter extends ExpandableRecyclerAdapter<MyParentViewHolder, MyChildViewHolder> {
     private Context context;
     private LayoutInflater mInflater;
 
-    public MyExpandableRecyclerAdapter(Context context, List<ParentObject> parentItemList) {
+    public E_RecyclerAdapter(Context context, List<ParentObject> parentItemList) {
         super(parentItemList);
         this.context = context;
         mInflater = LayoutInflater.from(context);

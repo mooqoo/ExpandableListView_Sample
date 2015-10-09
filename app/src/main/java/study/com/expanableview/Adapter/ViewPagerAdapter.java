@@ -8,8 +8,8 @@ import android.util.Log;
 import java.util.List;
 
 import study.com.expanableview.Fragment.Fragment_EListView;
+import study.com.expanableview.Fragment.Fragment_EListView_withRV_asChild;
 import study.com.expanableview.Fragment.Fragment_ERecyclerView;
-import study.com.expanableview.Fragment.Fragment_Tab3;
 import study.com.expanableview.Fragment.Fragment_Tab4;
 import study.com.expanableview.Model.ParentObject;
 
@@ -43,7 +43,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         }
         else if(position == 2)
         {
-            Fragment_Tab3 tab3 = Fragment_Tab3.newInstance();
+            Fragment_EListView_withRV_asChild tab3 = Fragment_EListView_withRV_asChild.newInstance();
             return tab3;
         }
         else if(position == 3)

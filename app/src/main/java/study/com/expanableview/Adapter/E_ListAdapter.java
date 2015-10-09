@@ -16,7 +16,7 @@ import study.com.expanableview.R;
 /**
  * Created by mooqoo on 10/3/15.
  */
-public class MyExpandableListAdapter extends BaseExpandableListAdapter {
+public class E_ListAdapter extends BaseExpandableListAdapter {
     public static final String TAG = "ExpandableAdapter";
 
     //Global Varaible
@@ -25,7 +25,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     private List<ParentObject> parentList;
 
     //Conctructor for RecyclerView child
-    public MyExpandableListAdapter(Context context, List<ParentObject> parentList) {
+    public E_ListAdapter(Context context, List<ParentObject> parentList) {
         this.context = context;
         this.parentList = parentList;
         infalInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

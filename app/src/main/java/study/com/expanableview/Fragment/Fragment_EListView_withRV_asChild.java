@@ -11,10 +11,10 @@ import study.com.expanableview.R;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
- * Use the {@link Fragment_Tab3#newInstance} factory method to
+ * Use the {@link Fragment_EListView_withRV_asChild#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Tab3 extends Fragment {
+public class Fragment_EListView_withRV_asChild extends Fragment {
 
     /**
      * Use this factory method to create a new instance of
@@ -22,14 +22,14 @@ public class Fragment_Tab3 extends Fragment {
      *
      * @return A new instance of fragment Fragment_Tab1.
      */
-    public static Fragment_Tab3 newInstance() {
-        Fragment_Tab3 fragment = new Fragment_Tab3();
+    public static Fragment_EListView_withRV_asChild newInstance() {
+        Fragment_EListView_withRV_asChild fragment = new Fragment_EListView_withRV_asChild();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public Fragment_Tab3() {
+    public Fragment_EListView_withRV_asChild() {
         // Required empty public constructor
     }
 
