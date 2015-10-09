@@ -3,20 +3,16 @@ package study.com.expanableview;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import study.com.expanableview.Adapter.E_ListAdapter;
 import study.com.expanableview.Adapter.ViewPagerAdapter;
 import study.com.expanableview.Model.ChildObject;
 import study.com.expanableview.Model.ParentObject;
@@ -26,11 +22,6 @@ import study.com.expanableview.Widget.SlidingTabLayout;
 public class MainActivity extends ActionBarActivity {
     public static final String TAG = "main";
 
-    //View
-    //Toolbar toolbar;
-    //ViewPager viewPager;
-    //SlidingTabLayout tabs;
-
     //global variables
     ViewPagerAdapter adapter_viewPager;
     String[] tabName = {"Name1","Name2", "Name3", "Name4"};
@@ -38,38 +29,10 @@ public class MainActivity extends ActionBarActivity {
     //Data to display
     List<ParentObject> parentList = new ArrayList<ParentObject>();
 
-
-    //------------------ ExpandableListView --------------------
-    //Header Group
-    List<String> headersArrayList = new ArrayList<String>();
-    //Child Group
-    List<String> childArrayList_1 = new ArrayList<String>();
-    List<String> childArrayList_2 = new ArrayList<String>();
-    List<String> childArrayList_3 = new ArrayList<String>();
-    //HashMap that ties Child Group to Header Group
-    HashMap<String, List<String>> childArrayList = new HashMap<String, List<String>>();
-    //Custom ExpandableAdapter
-    E_ListAdapter adapter;
-
-    //------------------- ExpandableRecyclerView ---------------
-    List<ParentObject> erv_parentList = new ArrayList<ParentObject>();
-
-    //------------------- RecyclerView child -------------------
-    List<ChildObject> childObjectList_1 = new ArrayList<ChildObject>();
-    List<ChildObject> childObjectList_2 = new ArrayList<ChildObject>();
-    List<ChildObject> childObjectList_3 = new ArrayList<ChildObject>();
-    HashMap<String, List<ChildObject>> childObjectArrayList = new HashMap<String, List<ChildObject>>();
-
-    ExpandableListView elv;
-    RecyclerView rv;
-
-    //Bind View with ButterKnife
-    //@Bind(R.id.elv) ExpandableListView elv;
-    //@Bind(R.id.rv) RecyclerView rv;
+    //View
     @Bind(R.id.toolbar) Toolbar toolbar;
     @Bind(R.id.pager) ViewPager viewPager;
     @Bind(R.id.tabs) SlidingTabLayout tabs;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,16 +50,6 @@ public class MainActivity extends ActionBarActivity {
 
         //setup sliding tab
         setupSlidingTab();
-
-        /*
-        //ExpandableListView
-        setupData();
-        setupExpandableListView();
-
-        //ExpandableRecyclerView
-        setupData_ExpandableRecyclerView();
-        setupExpandableRecyclerView();
-        */
     }
 
     private void setupToolbar() {
