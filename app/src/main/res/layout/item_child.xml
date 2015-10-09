@@ -3,18 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BCBCBC">
+    android:background="#DEDEDE">
 
     <TextView
         android:id="@+id/tv_child_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Child"
-        android:gravity="center"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:background="#00FFFF"/>
-
-
+        android:textSize="16dp"
+        android:gravity="center|left"
+        android:paddingLeft="40dp"
+        android:layout_margin="15dp"/>
 
 </LinearLayout>

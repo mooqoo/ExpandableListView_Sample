@@ -28,6 +28,10 @@ public class ParentObject implements ParentListItem {
         return false;
     }
 
+    public int getChildListSize() {
+        return childObjectList.size();
+    }
+
     public void addChild(ChildObject childObject) {
         childObjectList.add(childObject);
     }
