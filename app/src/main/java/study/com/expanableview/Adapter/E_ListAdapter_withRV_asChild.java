@@ -1,6 +1,8 @@
 package study.com.expanableview.Adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +41,7 @@ public class E_ListAdapter_withRV_asChild extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int i) {
-        //Log.i(TAG,"getChildrenCount = " + childArray.get(this.headerArray.get(i)).size());
-        return parentList.get(i).getChildListSize();
-        //return 1;  //this is for recyclerChild
+        return 1;  //since the child will be a single recyclerView
     }
 
     @Override
@@ -85,11 +85,13 @@ public class E_ListAdapter_withRV_asChild extends BaseExpandableListAdapter {
         final String childText = ((ChildObject)getChild(i, i2)).getName();
 
         if (view == null) {
-            view = infalInflater.inflate(R.layout.item_child, null);
+            view = infalInflater.inflate(R.layout.item_recycler_child, null);
         }
 
-        TextView textViewChild = (TextView) view.findViewById(R.id.tv_child_name);
-        textViewChild.setText(childText);
+        //setup RecyclerView
+        RecyclerView rv_child = (RecyclerView) view.findViewById(R.id.rv_child);
+        rv_child.setLayoutManager(new StaggeredGridLayoutManager(3, 1));
+        rv_child.setAdapter(new ChildRecyclerAdapter(((ParentObject)getGroup(i)).getChildItemList()));
         return view;
     }
 

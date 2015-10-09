@@ -18,12 +18,12 @@ import study.com.expanableview.R;
 /**
  * Created by mooqoo on 10/6/15.
  */
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>{
+public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdapter.ViewHolder>{
     public static final String TAG = "RecyclerChildAdapter";
     public List<ChildObject> childObjects;
 
     //Constructor
-    public MyRecyclerAdapter(List<ChildObject> childObjects) {
+    public ChildRecyclerAdapter(List<ChildObject> childObjects) {
         this.childObjects = childObjects;
         Log.i(TAG,"MyRecyclerAdapter Constructor: childObjects size = " + childObjects.size());
     }
