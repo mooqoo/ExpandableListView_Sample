@@ -85,7 +85,7 @@ public class E_ListAdapter_withRV_asChild extends BaseExpandableListAdapter {
         final String childText = ((ChildObject)getChild(i, i2)).getName();
 
         if (view == null) {
-            view = infalInflater.inflate(R.layout.item_recycler_child, null);
+            view = infalInflater.inflate(R.layout.item_recycler, null);
         }
 
         //setup RecyclerView

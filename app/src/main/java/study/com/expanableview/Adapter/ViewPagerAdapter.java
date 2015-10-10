@@ -10,7 +10,6 @@ import java.util.List;
 import study.com.expanableview.Fragment.Fragment_EListView;
 import study.com.expanableview.Fragment.Fragment_EListView_withRV_asChild;
 import study.com.expanableview.Fragment.Fragment_ERecyclerView;
-import study.com.expanableview.Fragment.Fragment_Tab4;
 import study.com.expanableview.Model.ParentObject;
 
 
@@ -45,11 +44,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         {
             Fragment_EListView_withRV_asChild tab3 = Fragment_EListView_withRV_asChild.newInstance();
             return tab3;
-        }
-        else if(position == 3)
-        {
-            Fragment_Tab4 tab4 = Fragment_Tab4.newInstance();
-            return tab4;
         }
         else {
             Log.e(TAG,"getItem: invalid position. No Fragment exist!");

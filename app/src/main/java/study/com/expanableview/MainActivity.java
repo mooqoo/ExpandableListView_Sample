@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
 
     //global variables
     ViewPagerAdapter adapter_viewPager;
-    String[] tabName = {"Name1","Name2", "Name3", "Name4"};
+    String[] tabName = {"Name1","Name2", "Name3"};
 
     //Data to display
     List<ParentObject> parentList = new ArrayList<ParentObject>();

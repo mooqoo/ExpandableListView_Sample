@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:background="#DEDEDE"
+    android:layout_margin="5dp">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_child"
+    <TextView
+        android:id="@+id/tv_child_name"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="match_parent"
+        android:text="Child"
+        android:textSize="12dp"
+        android:gravity="center"
+        android:layout_margin="5dp"/>
+
 </LinearLayout>

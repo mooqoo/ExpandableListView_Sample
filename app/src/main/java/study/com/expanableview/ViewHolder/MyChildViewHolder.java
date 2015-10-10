@@ -13,6 +13,7 @@ import study.com.expanableview.R;
 public class MyChildViewHolder extends ChildViewHolder {
     public TextView tv_child_name;
 
+
     //Constructor
     public MyChildViewHolder(View itemView) {
         super(itemView);
